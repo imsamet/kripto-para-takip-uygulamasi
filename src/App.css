@@ -1,0 +1,14 @@
+:root{
+    --bg-light: #F2F8FF;
+    --card-light: #FBFDFF;
+    --card-hover:#DCECFF;
+    --soft-text: #BEDCFF;
+    --text: #5C5C5C;
+    --text-blue: #22BDFF;
+    --green: #78C55D;
+    --red: #EB5D5D;
+}
+
+body{
+    background-color: var(--bg-light)!important;
+}

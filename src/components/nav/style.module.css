@@ -1,0 +1,66 @@
+.nav{
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100px;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--card-light);
+    max-width: 1400px;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.logoContainer{
+    display: flex;
+    align-items: center;
+    grid-gap: 17px;
+    color: var(--text-blue);
+    margin-left: 48px;
+}
+.logoContainer svg{
+    font-size: 60px;
+}
+.logoContainer span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    margin-right: 90px;
+    height: 100%;
+}
+.button{
+    width: 108px;
+    height: 54px;
+    background: var(--card-hover);
+    border-radius: 100px;
+    padding: 2px;
+    cursor: pointer;
+}
+.buttonContent{
+    width: 50px;
+    height: 50px;
+    background-color: var(--card-light);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    font-size: 24px;
+    box-shadow: 6px 0px 17px 0 rgb(0 0 0 / 14%);
+
+    margin-left: 0px;
+    transition: 0.2s;
+}
+.justifyRight{
+    box-shadow: -6px 0px 17px 0 rgb(0 0 0 / 14%);
+    margin-left: 54px;
+}

@@ -1,11 +1,13 @@
 import Style from './style.module.css'
 
 import { Container, Row, Col } from 'react-bootstrap'
+import Nav from '../../nav/nav'
 
 export default function Index () {
 
     return(
         <>
+            <Nav/>
             <Container>
 
                 <Row>

@@ -1,6 +1,7 @@
 export { default as Delete } from "./Delete";
 export { default as Done } from "./Done";
 export { default as Down } from "./Down";
+export { default as Logo } from "./Logo";
 export { default as Moon } from "./Moon";
 export { default as PinActive } from "./PinActive";
 export { default as Pin } from "./Pin";
