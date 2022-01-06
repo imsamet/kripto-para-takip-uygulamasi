@@ -1,8 +1,10 @@
 import Style from './index.module.css'
 
 import { Container, Row, Col } from 'react-bootstrap'
+
 import Nav from '../../nav/nav'
 import News from '../../news/news'
+import Cryptos from '../../crypto-list/cryptos'
 
 export default function Index () {
 
@@ -18,8 +20,8 @@ export default function Index () {
                         <News/>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={4}>
-                    xs=6 md=4
+                    <Col className='h-100' xs={12} sm={12} md={6} lg={4} xl={4} xxl={4}>
+                        <Cryptos/>
                     </Col>
 
                     <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={4}>

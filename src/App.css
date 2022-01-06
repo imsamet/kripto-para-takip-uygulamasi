@@ -7,6 +7,8 @@
     --text-blue: #22BDFF;
     --green: #78C55D;
     --red: #EB5D5D;
+
+    --transition: 0.2s
 }
 
 body{

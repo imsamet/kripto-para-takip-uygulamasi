@@ -1,0 +1,74 @@
+.container{
+    display: grid;
+    grid-template-columns: 5fr 5fr 8fr 1fr;
+    align-items: center;
+    background: var(--bg-light);
+    height: 60px;
+    border-radius: 30px;
+    padding: 0 12px;
+    margin-bottom: 10px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.container:hover{
+    background: var(--card-hover);
+    box-shadow: 0px 0px 10px 0 rgb(0 0 0 / 8%);
+
+}
+.imageBox{
+    height: 36px;
+    display: flex;
+    grid-gap: 5px;
+}
+.imageBox img{
+    width: 36px;
+    height: auto;
+    object-fit: contain;
+}
+.imageBox span{
+    font-size: 9px;
+    font-weight: bold;
+    color: var(--text);
+}
+.imageBox span small{
+    color: var(--soft-text);
+}
+.priceBox span{
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.percent{
+    display: flex;
+    margin-bottom: -10px;
+}
+.percent span{
+    font-size: 9px;
+    font-weight: inherit;
+}
+.rangeBox span{
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+}
+
+.saveBox{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.saveBox svg{
+    color: var(--text);
+    transition: var(--transition);
+}
+.saveBox:hover svg{
+    color: var(--soft-text);
+}
+
+.green{
+    color: var(--green);
+}
+.red{
+    color: var(--red);
+}

@@ -59,7 +59,7 @@
     box-shadow: 6px 0px 17px 0 rgb(0 0 0 / 14%);
 
     margin-left: 0px;
-    transition: 0.2s;
+    transition: var(--transition);
 }
 .justifyRight{
     box-shadow: -6px 0px 17px 0 rgb(0 0 0 / 14%);
