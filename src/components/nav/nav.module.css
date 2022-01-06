@@ -1,4 +1,5 @@
 .nav{
+    top: 0px;
     display: flex;
     position: fixed;
     width: 100vw;

@@ -1,14 +1,10 @@
-import Style from './style.module.css'
+import Style from './nav.module.css'
 
 import cn from 'classnames'
 import {Logo, Moon, Sun} from '../icons'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 export default function Nav () {
-
-    useEffect(() => {
-        console.log(mode)
-    })
 
     const [mode, setMode] = useState("light")
 
