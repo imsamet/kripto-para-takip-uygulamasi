@@ -1,6 +1,6 @@
 import Style from './new.module.css'
 
-export default function New ({index, head, paragraph, date, image, url}) {
+export default function New ({index, title, paragraph, date, image, url}) {
     return(
         <div className={Style.container}>
 
@@ -10,8 +10,8 @@ export default function New ({index, head, paragraph, date, image, url}) {
 
             <div>
 
-                <div className={Style.headLimit}>
-                    <a href={url} className={Style.head}>{head}</a>
+                <div className={Style.titleLimit}>
+                    <a href={url} className={Style.title}>{title}</a>
                 </div>
                 
                 <div className={Style.paragraphLimit}>

@@ -7,14 +7,14 @@
     margin-bottom: 20px;
 }
 
-.headLimit, .paragraphLimit{
+.titleLimit, .paragraphLimit{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
 
-.number, .head, .paragraf, .date{
+.number, .title, .paragraf, .date{
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
 }
@@ -24,15 +24,15 @@
     font-weight: bold;
 }
 
-.headLimit{
+.titleLimit{
     -webkit-line-clamp: 2;
     line-clamp: 2;
 }
-.head{
+.title{
     text-decoration: none;
     font-weight: bold;
 }
-.head:hover{
+.title:hover{
     cursor: pointer;
     color: var(--text);
 }

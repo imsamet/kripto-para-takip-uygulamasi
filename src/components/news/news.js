@@ -614,7 +614,7 @@ export default function News () {
     
     return(
         <div className={Style.container}>
-            <h1 className={Style.head}>Haberler</h1>
+            <h1 className={Style.title}>Haberler</h1>
 
             <div className={Style.content}>
                 {
@@ -623,7 +623,7 @@ export default function News () {
                             <New
                                 key={`${index}-${value.title}`}
                                 index={index + 1}
-                                head={value.title}
+                                title={value.title}
                                 paragraph={value.text}
                                 date={value.date}
                                 image={value.image_url}

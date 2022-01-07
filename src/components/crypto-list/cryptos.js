@@ -10,24 +10,19 @@ export default function Cryptos () {
     const {cryptos, setCryptos} = useCrypto()
     const [search, setSearch] = useState()
 
-    useEffect(() => {
-        console.log(cryptos)
-    })
-
     const inputBoxHandleClick = () => {// inputBox'a tıklandığında da input'a focus almasını sağlıyor.
         inputRef.current.focus()
     }
 
     const inputChange = (e) => {
         setSearch(e.target.value.toLowerCase())
-        console.log(search)
     }
     
     return(
         <div className={Style.container}>
 
             <div className={Style.head}>
-                <h1 className={Style.h1}>Liste</h1>
+                <h1 className={Style.title}>Liste</h1>
 
                 <div className={Style.inputBox} onClick={inputBoxHandleClick}>
                     <Search/>
@@ -54,7 +49,7 @@ export default function Cryptos () {
                                 <Crypto
                                     key={`${index}-${value.title}`}
                                     image={value.image}
-                                    name={value.symbol}
+                                    symbol={value.symbol}
                                     price={value.current_price}
                                     range={value.total_volume}
                                     hight24={value.high_24h}

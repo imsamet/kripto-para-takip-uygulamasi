@@ -1,0 +1,35 @@
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    min-height: 45px;
+    width: min-content;
+    border-radius: 100px;
+    border: 0px;
+    background: var(--bg-light);
+    cursor: pointer;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+.red{
+    background-color: var(--red);
+}
+.green{
+    background-color: var(--green);
+}
+
+.light{
+    background-color: transparent;
+    border: 1px solid var(--bg-light);
+}
+.light.red{
+    border-color: var(--red);
+    color: var(--red);
+}
+.light.green{
+    border-color: var(--green);
+    color: var(--green);
+}
