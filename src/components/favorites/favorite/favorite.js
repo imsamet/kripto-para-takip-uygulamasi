@@ -11,7 +11,7 @@ import Button from '../../button/button'
 export default function Favorite ({favoriteIndex, title, favoriteCoins}) {
 
     const [isModuleBox, setModuleBox] = useState(false)
-    const {cryptos, setCryptos} = useCrypto()
+    const {cryptos} = useCrypto()
     const {favorites, dispatch} = useFavorites()
 
     const changeModuleBox = () => {
@@ -26,7 +26,6 @@ export default function Favorite ({favoriteIndex, title, favoriteCoins}) {
 
         let newFavorites = favorites;
         newFavorites.favorites.splice(favoriteIndex, 1)
-        console.log(newFavorites)
 
         dispatch({type: 'DELETE_FAVORITE', payload: newFavorites.favorites})
         setModuleBox(false)

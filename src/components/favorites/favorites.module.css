@@ -1,12 +1,13 @@
 .container{
     display: grid;
-    grid-template-rows: min-content;
+    grid-auto-rows: min-content;
     height: 100%;
     overflow: scroll;
 }
 .newFavorite{
     padding: 25px;
     border-radius: 30px;
+    max-height: 108px;
     background-color: var(--card-light);
     display: flex;
     align-items: center;

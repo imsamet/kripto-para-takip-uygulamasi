@@ -11,7 +11,7 @@ export default function New ({index, title, paragraph, date, image, url}) {
             <div>
 
                 <div className={Style.titleLimit}>
-                    <a href={url} className={Style.title}>{title}</a>
+                    <a href={url} target="_blank" rel="noopener noreferrer" className={Style.title}>{title}</a>
                 </div>
                 
                 <div className={Style.paragraphLimit}>
