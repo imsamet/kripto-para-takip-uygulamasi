@@ -9,6 +9,7 @@ import { useCrypto } from '../../context/cryptoContext'
 
 export default function News () {
 
+    //Kullandığım haber api'ının üzcetsiz deneme hakkını doldurmuşum :D o yüzden kodları yorum satırına aldım "newss" değişkenine son gelen haber api'sini ekledim 
     const newss = [
         {
             "news_url": "https://coingape.com/breaking-chinas-largest-messaging-and-payment-app-wechat-to-integrate-digital-yuan/",
