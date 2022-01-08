@@ -22,7 +22,7 @@ export default function New ({index, title, paragraph, date, image, url}) {
             </div>
 
             <div className={Style.imageContainer}>
-                <img className={Style.image} src={image}></img>
+                <img className={Style.image} src={image} alt={title}></img>
             </div>
 
         </div>

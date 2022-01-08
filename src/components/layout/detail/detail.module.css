@@ -1,6 +1,7 @@
 .row{
-    grid-gap: 25px 0;
+    display: flex;
     padding-top: 130px;
     box-sizing: border-box;
     height: 100vh;
+    grid-gap: 25px 0;
 }

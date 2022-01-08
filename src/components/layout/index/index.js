@@ -13,22 +13,21 @@ export default function Index () {
         <>
             <Nav/>
 
-            <Container className={Style.container}>
+            <Container>
 
-                <Row className='h-100'>
+                <Row className={Style.row}>
 
-                    <Col className='h-100' xs={12} sm={12} md={12} lg={4} xl={4} xxl={4}>
-                        <News/>
-                    </Col>
-
-                    <Col className='h-100' xs={12} sm={12} md={6} lg={4} xl={4} xxl={4}>
+                    <Col className='h-100' xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                         <Cryptos/>
                     </Col>
 
-                    <Col className='h-100' xs={12} sm={12} md={6} lg={4} xl={4} xxl={4}>
+                    <Col className='h-100' xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                         <Favorites/>
                     </Col>
 
+                    <Col className='h-100' xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
+                        <News/>
+                    </Col>
                 </Row>
             </Container>
 

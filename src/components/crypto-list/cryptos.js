@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import {useCrypto} from '../../context/cryptoContext'
 import Crypto from './crypto/crypto'
 import Style from './cryptos.module.css'
@@ -7,8 +7,9 @@ import { Search } from '../icons'
 export default function Cryptos () {
 
     const inputRef = useRef()
-    const {cryptos, setCryptos} = useCrypto()
+    const {cryptos} = useCrypto()
     const [search, setSearch] = useState()
+    console.log(cryptos)
 
     const inputBoxHandleClick = () => {// inputBox'a tıklandığında da input'a focus almasını sağlıyor.
         inputRef.current.focus()
@@ -40,7 +41,7 @@ export default function Cryptos () {
                 {
                     cryptos && 
                         cryptos.filter((value) => {
-                            if (search == undefined || search === "") return value;
+                            if (search === undefined || search === "") return value;
                             else
                             return value.symbol.toLowerCase().includes(search) || value.name.toLowerCase().includes(search)
                         }).map((value, index) => {
@@ -50,9 +51,11 @@ export default function Cryptos () {
                                     key={`${index}-${value.title}`}
                                     image={value.image}
                                     symbol={value.symbol}
+                                    cryptoId={value.id}
                                     price={value.current_price}
                                     range={value.total_volume}
-                                    hight24={value.high_24h}
+                                    priceChange={value.price_change_24h}
+                                    percent={value.price_change_percentage_24h}
                                 />
                             )
                                 

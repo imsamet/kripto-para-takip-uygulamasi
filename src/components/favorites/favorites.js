@@ -23,7 +23,7 @@ export default function Favorites () {
 
     const buttonSave = () => {
 
-        if(inputRef.current.value != "") {
+        if(inputRef.current.value !== "") {
             let newFavorites = favorites;
             newFavorites.favorites.push({title: inputRef.current.value, coins: []})
     

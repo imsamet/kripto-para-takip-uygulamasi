@@ -1,11 +1,12 @@
 import Style from './crypto.module.css'
 
+import { Link } from 'react-router-dom'
+
 import { SaveActive } from '../../../icons'
-import { useState } from 'react'
 import cn from 'classnames'
 import {useFavorites} from '../../../../context/favoritesContext'
 
-export default function Crypto ({ favoriteIndex, image, symbol, price, range, hight24 }) {
+export default function Crypto ({ favoriteIndex, image, symbol, price, range, priceChange, percent }) {
 
     const {favorites, dispatch} = useFavorites()
 
@@ -22,33 +23,33 @@ export default function Crypto ({ favoriteIndex, image, symbol, price, range, hi
 
     }
 
-    const isUp = (hight24 - price) < 0;
-    const princeChange = Math.abs(hight24 - price)
-    const percent = Math.round(((princeChange / price) * 100 + Number.EPSILON) * 100) / 100 // yüzdeyi hesaplayıp virgülden sonra 2 basamaklı olacak şekilde kısaltıyor
-
     return(
         <div className={Style.container}>
 
-            <div className={Style.imageBox}>
-                <img src={image}></img>
-                <span>{symbol}<small>/USD</small></span>
-            </div>
+            <Link className={Style.link} to={`/detail/${symbol}`}>
 
-            <div className={cn(Style.priceBox, isUp ? Style.green : Style.red)}>
+                <div className={Style.imageBox}>
+                    <img src={image} alt={symbol}></img>
+                    <span>{symbol}<small>/USD</small></span>
+                </div>
 
-                <span>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumSignificantDigits: 10}).format(price)}</span>
+                <div className={cn(Style.priceBox, priceChange >= 0 ? Style.green : Style.red)}>
 
-                <div className={Style.percent}>
+                    <span>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumSignificantDigits: 10}).format(price)}</span>
 
-                    <span>{`%${percent}($${Math.round((princeChange + Number.EPSILON) * 100) / 100})`}</span>
+                    <div className={Style.percent}>
+
+                        <span>{`%${Math.round((percent + Number.EPSILON) * 100) / 100}($${Math.round((priceChange + Number.EPSILON) * 100) / 100})`}</span>
+
+                    </div>
 
                 </div>
 
-            </div>
+                <div className={Style.rangeBox}>
+                    <span>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumSignificantDigits: 15}).format(range)}</span>
+                </div>
 
-            <div className={Style.rangeBox}>
-                <span>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumSignificantDigits: 15}).format(range)}</span>
-            </div>
+            </Link>
 
             <div className={Style.saveBox} onClick={handleSave}>
                 <SaveActive/>

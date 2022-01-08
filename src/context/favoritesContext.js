@@ -1,10 +1,9 @@
-import { createContext, useReducer, useContext, useState, useEffect } from "react";
+import { createContext, useReducer, useContext, useEffect } from "react";
 import Reducer from "../reducer/favoriteReducer";
-import axios from 'axios'
 
 const Context = createContext()
 
-const initialState = localStorage.getItem('taze-kripto-para-takip-app') && localStorage.getItem('taze-kripto-para-takip-app') != "undefined"
+const initialState = localStorage.getItem('taze-kripto-para-takip-app') && localStorage.getItem('taze-kripto-para-takip-app') !== "undefined"
     ? 
         JSON.parse(localStorage.getItem('taze-kripto-para-takip-app')) 
     : 

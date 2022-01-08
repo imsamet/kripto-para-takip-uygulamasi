@@ -58,7 +58,8 @@ export default function Favorite ({favoriteIndex, title, favoriteCoins}) {
                                     symbol={value.symbol}
                                     price={value.current_price}
                                     range={value.total_volume}
-                                    hight24={value.high_24h}
+                                    priceChange={value.price_change_24h}
+                                    percent={value.price_change_percentage_24h}
                                     favoriteIndex={favoriteIndex}
                                 />
                             )

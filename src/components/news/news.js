@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
 import New from './new/new'
 import Style from './news.module.css'
 
@@ -617,21 +618,28 @@ export default function News () {
             <h1 className={Style.title}>Haberler</h1>
 
             <div className={Style.content}>
-                {
-                    newss && newss.map((value, index) => {
-                        return (
-                            <New
-                                key={`${index}-${value.title}`}
-                                index={index + 1}
-                                title={value.title}
-                                paragraph={value.text}
-                                date={value.date}
-                                image={value.image_url}
-                                url={value.news_url}
-                            />
-                        )
-                    })
-                }
+                <Container>
+                    <Row>
+                        
+                            {
+                                newss && newss.map((value, index) => {
+                                    return (
+                                        <Col xs={12} sm={12} md={6} lg={6} xl={4} xxl={4}>
+                                            <New
+                                                key={`${index}-${value.title}`}
+                                                index={index + 1}
+                                                title={value.title}
+                                                paragraph={value.text}
+                                                date={value.date}
+                                                image={value.image_url}
+                                                url={value.news_url}
+                                            />
+                                        </Col>
+                                    )
+                                })
+                            }
+                    </Row>
+                </Container>
             </div>
 
         </div>
