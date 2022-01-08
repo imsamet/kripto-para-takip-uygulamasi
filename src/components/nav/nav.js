@@ -9,7 +9,7 @@ import { useMode } from '../../context/modeContext'
 
 export default function Nav () {
 
-    const {mode, setMode} = useContext(ModeContext)
+    const {mode, changeMode} = useContext(ModeContext)
 
     return(
         <nav className={Style.nav}>
@@ -23,7 +23,7 @@ export default function Nav () {
 
                 <div className={Style.buttonContainer}>
 
-                    <div className={Style.button} onClick={() => { setMode(mode === "dark" ? "light" : "dark") }}>
+                    <div className={Style.button} onClick={() => { changeMode(mode === "dark" ? "light" : "dark") }}>
 
                         <div className={cn(Style.buttonContent, mode === "dark" && Style.justifyRight)}>
 

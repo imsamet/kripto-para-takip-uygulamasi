@@ -9,7 +9,6 @@ export default function Cryptos () {
     const inputRef = useRef()
     const {cryptos} = useCrypto()
     const [search, setSearch] = useState()
-    console.log(cryptos)
 
     const inputBoxHandleClick = () => {// inputBox'a tıklandığında da input'a focus almasını sağlıyor.
         inputRef.current.focus()

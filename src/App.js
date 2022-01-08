@@ -13,20 +13,33 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-    const [mode, setMode] = useState("light")
+    const [mode, setMode] = useState(null)
+
+    const changeMode = (newMode) => {
+        setMode(newMode)
+        localStorage.setItem('taze-kripto-para-takip-app-mode', newMode)
+    }
 
     useEffect(() => {
+        setMode(localStorage.getItem('taze-kripto-para-takip-app-mode') || "light")
+    }, [])
+
+    useEffect(() => {
+
         if (!mode) return
+        
         const $html = document.querySelector('html')
+
         $html.classList.remove('light')
         $html.classList.remove('dark')
         $html.classList.add(mode.toString())
+
     }, [mode])
 
     return (
         <CryptoProvider>
             <FavoriteProvider>
-                <ModeContext.Provider value={{mode, setMode}}>
+                <ModeContext.Provider value={{mode, changeMode}}>
                     <BrowserRouter>
                         <Routes>
                             <Route path="/" element={<Index/>} exact />

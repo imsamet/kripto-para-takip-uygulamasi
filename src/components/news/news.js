@@ -624,9 +624,9 @@ export default function News () {
                             {
                                 newss && newss.map((value, index) => {
                                     return (
-                                        <Col xs={12} sm={12} md={6} lg={6} xl={4} xxl={4}>
+                                        <Col xs={12} sm={12} md={6} lg={6} xl={4} xxl={4} key={`${index}-${value.title}`}>
                                             <New
-                                                key={`${index}-${value.title}`}
+                                                
                                                 index={index + 1}
                                                 title={value.title}
                                                 paragraph={value.text}
