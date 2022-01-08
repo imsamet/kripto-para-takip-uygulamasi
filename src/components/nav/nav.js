@@ -1,20 +1,25 @@
 import Style from './nav.module.css'
 
+import { useContext} from "react";
+import { Link } from 'react-router-dom'
+import ModeContext from '../../context/modeContext';
 import cn from 'classnames'
 import {Logo, Moon, Sun} from '../icons'
-import { useState } from 'react'
+import { useMode } from '../../context/modeContext'
 
 export default function Nav () {
 
-    const [mode, setMode] = useState("light")
+    const {mode, setMode} = useContext(ModeContext)
 
     return(
         <nav className={Style.nav}>
             <div className={Style.container}>
-                <div className={Style.logoContainer}>
-                    <Logo/>
-                    <span>Kripto Takip</span>
-                </div>
+                <Link style={{textDecoration: "none"}} to="/">
+                    <div className={Style.logoContainer}>
+                        <Logo/>
+                        <span>Kripto Takip</span>
+                    </div>
+                </Link>
 
                 <div className={Style.buttonContainer}>
 

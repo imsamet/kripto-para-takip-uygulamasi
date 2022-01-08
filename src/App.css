@@ -1,9 +1,22 @@
-:root{
+.light:root{
     --bg-light: #F2F8FF;
     --card-light: #FBFDFF;
     --card-hover:#DCECFF;
     --soft-text: #BEDCFF;
     --text: #5C5C5C;
+    --text-blue: #22BDFF;
+    --green: #78C55D;
+    --red: #EB5D5D;
+
+    --transition: 0.2s
+}
+
+.dark:root{
+    --bg-light: #191C20;
+    --card-light: #343D46;
+    --card-hover:#626B76;
+    --soft-text: #5178A5;
+    --text: #C0C0C0;
     --text-blue: #22BDFF;
     --green: #78C55D;
     --red: #EB5D5D;
