@@ -10,29 +10,29 @@ import Button from '../../button/button'
 
 export default function Crypto ({ image, symbol, cryptoId, price, range, priceChange, percent }) {
 
-    const checkboxContentRef = useRef(true)
+    const checkboxContentRef = useRef()// modelbox'ın içindeki chckbox capsayıcı div'i. Seçili favori listelerini almak için
     const [isModuleBox, setModuleBox] = useState(false)
     const {favorites, dispatch} = useFavorites()
 
-    const addFavoriteList = () => {
+    const addFavoriteList = () => { // save iconuna tıklandığında
         setModuleBox(true)
     }
 
-    const buttonCancel = () => {
+    const buttonCancel = () => {// iptal butonu (modalBox içinde)
         setModuleBox(false)
     }
 
-    const buttonSave = async () => {
+    const buttonSave = async () => {// kaydet butonu (modalBox içinde)
 
         let newFavorites = favorites;
         const checkboxContent = checkboxContentRef.current.children
 
-        Array.prototype.map.call(checkboxContent, (child, index) => {
+        Array.prototype.map.call(checkboxContent, (child, index) => {// checkboxCoktent'i döndürüp newFavorites'a ekliyor
             child.children[1].checked && 
-                newFavorites.favorites[index].coins.push(symbol)
+                newFavorites.favorites[index].coins.push(symbol)//seçili checkbox'ın index'i ile favorilerin indeksi aynı, checked'sa newFavorites'a ekliyor
         })
 
-        await dispatch({type: 'ADD_FAVORITE_COIN', payload: newFavorites.favorites})
+        await dispatch({type: 'ADD_FAVORITE_COIN', payload: newFavorites.favorites}) //newFavorites global state'e ekleniyor
 
         setModuleBox(false)
     }

@@ -9,7 +9,7 @@ import { useRef, useState } from 'react'
 
 export default function Favorites () {
 
-    const inputRef = useRef()
+    const inputRef = useRef() // yeni izleme listesinin adının girildiği input
     const [isModuleBox, setModuleBox] = useState(false)
     const {favorites, dispatch} = useFavorites()
 
@@ -24,13 +24,15 @@ export default function Favorites () {
     const buttonSave = () => {
 
         if(inputRef.current.value !== "") {
-            let newFavorites = favorites;
-            newFavorites.favorites.push({title: inputRef.current.value, coins: []})
+
+            let newFavorites = favorites; //global state'i koyalıyor
+
+            newFavorites.favorites.push({title: inputRef.current.value, coins: []}) //newFavorites'ın sonuna yeni izleme listesi ekleniyor
     
-            dispatch({type: 'ADD_FAVORITE', payload: newFavorites.favorites})
+            dispatch({type: 'ADD_FAVORITE', payload: newFavorites.favorites})// state güncelleniyor
     
             setModuleBox(false)
-        }else{
+        }else{//input boşsa uyarı için input'a uyarı için style ekleniyor
             inputRef.current.parentElement.classList.add(Style.compulsory)
         }
     }

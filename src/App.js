@@ -10,6 +10,7 @@ import Index from './components/layout/index';
 import Detail from './components/layout/detail/detail';
 import ModeContext  from './context/modeContext';
 import { useEffect, useState } from 'react';
+import { NewProvider } from './context/newsContext';
 
 function App() {
 
@@ -39,14 +40,16 @@ function App() {
     return (
         <CryptoProvider>
             <FavoriteProvider>
-                <ModeContext.Provider value={{mode, changeMode}}>
-                    <BrowserRouter>
-                        <Routes>
-                            <Route path="/" element={<Index/>} exact />
-                            <Route path="detail/:cryptoId" element={<Detail/>} />
-                        </Routes>
-                    </BrowserRouter>
-                </ModeContext.Provider>
+                <NewProvider>
+                    <ModeContext.Provider value={{mode, changeMode}}>
+                        <BrowserRouter>
+                            <Routes>
+                                <Route path="/" element={<Index/>} exact />
+                                <Route path="detail/:cryptoId" element={<Detail/>} />
+                            </Routes>
+                        </BrowserRouter>
+                    </ModeContext.Provider>
+                </NewProvider>
             </FavoriteProvider>
         </CryptoProvider>
     );

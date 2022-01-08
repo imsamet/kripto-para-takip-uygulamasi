@@ -25,9 +25,9 @@ export default function Favorite ({favoriteIndex, title, favoriteCoins}) {
     const buttonDelete = () => {
 
         let newFavorites = favorites;
-        newFavorites.favorites.splice(favoriteIndex, 1)
+        newFavorites.favorites.splice(favoriteIndex, 1) // favori indexine göre izleme listesi siliniyor
 
-        dispatch({type: 'DELETE_FAVORITE', payload: newFavorites.favorites})
+        dispatch({type: 'DELETE_FAVORITE', payload: newFavorites.favorites}) // yeni favorites state'e ekleniyor
         setModuleBox(false)
     }
 

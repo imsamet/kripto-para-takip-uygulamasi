@@ -39,7 +39,7 @@ export default function Cryptos () {
             <div className={Style.content}>
                 {
                     cryptos && 
-                        cryptos.filter((value) => {
+                        cryptos.filter((value) => { // Input'un valuesüne göre coinleri filtreleyim yazdırıyorum. Input boşsa tüm coinleri yazdırıyor.
                             if (search === undefined || search === "") return value;
                             else
                             return value.symbol.toLowerCase().includes(search) || value.name.toLowerCase().includes(search)

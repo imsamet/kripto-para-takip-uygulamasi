@@ -7,7 +7,7 @@ export default function ModuleBox ({title, text, closeFunction, children}) {
 
     const handleClick = (e) => {
 
-        containerRef.current === e.target &&
+        containerRef.current === e.target && //sadece container'a tıklandığında kapanmasını sağlıyor
             closeFunction(false)
     }
 

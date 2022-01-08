@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import ModeContext from '../../context/modeContext';
 import cn from 'classnames'
 import {Logo, Moon, Sun} from '../icons'
-import { useMode } from '../../context/modeContext'
 
 export default function Nav () {
 
