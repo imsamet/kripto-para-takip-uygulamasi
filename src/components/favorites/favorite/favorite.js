@@ -56,6 +56,7 @@ export default function Favorite ({favoriteIndex, title, favoriteCoins}) {
                                     key={`${index}-${value.title}`}
                                     image={value.image}
                                     symbol={value.symbol}
+                                    cryptoId={value.id}
                                     price={value.current_price}
                                     range={value.total_volume}
                                     priceChange={value.price_change_24h}

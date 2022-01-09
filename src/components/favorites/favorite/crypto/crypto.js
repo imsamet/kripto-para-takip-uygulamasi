@@ -6,7 +6,7 @@ import { SaveActive } from '../../../icons'
 import cn from 'classnames'
 import {useFavorites} from '../../../../context/favoritesContext'
 
-export default function Crypto ({ favoriteIndex, image, symbol, price, range, priceChange, percent }) {
+export default function Crypto ({ favoriteIndex, image, symbol, cryptoId, price, range, priceChange, percent }) {
 
     const {favorites, dispatch} = useFavorites()
 
@@ -26,7 +26,7 @@ export default function Crypto ({ favoriteIndex, image, symbol, price, range, pr
     return(
         <div className={Style.container}>
 
-            <Link className={Style.link} to={`/detail/${symbol}`}>
+            <Link className={Style.link} to={`/detail/${cryptoId}`}>
 
                 <div className={Style.imageBox}>
                     <img src={image} alt={symbol}></img>
