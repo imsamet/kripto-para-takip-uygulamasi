@@ -11,7 +11,7 @@ import { useCrypto } from '../../context/cryptoContext'
 export default function News () {
 
     //Kullandığım haber api'ının üzcetsiz deneme hakkını doldurmuşum :D o yüzden kodları yorum satırına aldım "newss" değişkenine son gelen haber api'sini ekledim 
-    const newss = [
+    const baseNews = [
         {
             "news_url": "https://coingape.com/breaking-chinas-largest-messaging-and-payment-app-wechat-to-integrate-digital-yuan/",
             "image_url": "https://crypto.snapi.dev/images/v1/s/e/digital-yuan-cbdc-jdcom-96009.jpeg",
@@ -636,7 +636,7 @@ export default function News () {
                     <Row>
                         {
                             cryptoId ? 
-                                newss && newss.map((value, index) => {
+                                baseNews && baseNews.map((value, index) => {
                                     return (
                                         <Col xs={12} sm={12} md={6} lg={6} xl={4} xxl={4} key={`${index}-${value.title}`}>
                                             <New
@@ -652,7 +652,7 @@ export default function News () {
                                     )
                                 })
                             :
-                                newss && newss.map((value, index) => {
+                                baseNews && baseNews.map((value, index) => {
                                     return (
                                         <Col xs={12} sm={12} md={6} lg={6} xl={4} xxl={4} key={`${index}-${value.title}`}>
                                             <New
