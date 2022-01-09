@@ -1,5 +1,6 @@
 import Style from './chart.module.css'
 
+import CONSTANTS from '../../constants/constants';
 import { useParams } from 'react-router-dom'
 import { Line } from 'react-chartjs-2'
 import Chart from 'chart.js/auto' //Kullanılmıyor gibi görünüyor fakal kaldırınca cart çalışmıyor.
@@ -32,7 +33,7 @@ export default function ChartLine () {
     useEffect(() => { // cart için gerekli data'ların çekildiği yer. 
         const day = dateRange === "day" ? 1 : dateRange === "week" ? 7 : dateRange === "month" ? 30 : dateRange === "year" && 365
 
-        axios.get(`https://api.coingecko.com/api/v3/coins/${cryptoId}/market_chart?vs_currency=usd&days=${day}`)
+        axios.get(`${CONSTANTS.COIN_API_BASE_URL}${cryptoId}${CONSTANTS.COIN_API_SINGLE_COIN_URL}${day}`)
             .then(response => {
                 let newLabels = [], newData = []
 

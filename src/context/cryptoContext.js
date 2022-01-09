@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import axios from 'axios'
+import CONSTANTS from '../constants/constants';
 
 const Context = createContext()
 
@@ -8,7 +9,7 @@ function CryptoProvider ({children}) {
     const [cryptos, setCryptos] = useState()
 
     useEffect(() => {
-        axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false`)
+        axios.get(`${CONSTANTS.COIN_API_BASE_URL}${CONSTANTS.COIN_API_GENERAL_URL}`)
             .then(response => setCryptos(response.data))
     }, [])
 

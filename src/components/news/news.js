@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import CONSTANTS from "../constants/constants";
+import CONSTANTS from "../../constants/constants";
 import { Col, Container, Row } from 'react-bootstrap'
 import { useNew } from '../../context/newsContext'
 import { useParams } from 'react-router-dom'
@@ -622,7 +622,7 @@ export default function News () {
         })
 
         //cryptoId && symbol !== undefined && cryptos &&
-        //axios.get(`https://cryptonews-api.com/api/v1?tickers=${symbol[0].symbol.toUpperCase()}&items=50&token=${CONSTANTS.NEWS_API_KEY}`)
+        //axios.get(`${CONSTANTS.NEWS_API_BASE_URL}?tickers=${symbol[0].symbol.toUpperCase()}&items=50&token=${CONSTANTS.NEWS_API_KEY}`)
         //    .then(response => setCoinNews(response.data.data))
 
     }, [cryptoId, cryptos])

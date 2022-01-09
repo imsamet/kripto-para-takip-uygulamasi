@@ -9,7 +9,7 @@ function NewProvider ({children}) {
     const [news, setNews] = useState()
 
     useEffect(() => {
-        //axios.get(`https://cryptonews-api.com/api/v1/category?section=general&items=50&token=${CONSTANTS.NEWS_API_KEY}`)
+        //axios.get(`${CONSTANTS.NEWS_API_BASE_URL}${CONSTANTS.NEWS_API_GENERAL_URL}${CONSTANTS.NEWS_API_KEY}`)
         //    .then(response => setNews(response.data.data))
         
     }, [])
