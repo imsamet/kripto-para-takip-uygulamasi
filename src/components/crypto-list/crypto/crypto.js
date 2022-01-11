@@ -22,7 +22,7 @@ export default function Crypto ({ image, symbol, cryptoId, price, range, priceCh
         setModuleBox(false)
     }
 
-    const buttonSave = async () => {// kaydet butonu (modalBox içinde)
+    const buttonSave = () => {// kaydet butonu (modalBox içinde)
 
         let newFavorites = favorites;
         const checkboxContent = checkboxContentRef.current.children
@@ -32,7 +32,7 @@ export default function Crypto ({ image, symbol, cryptoId, price, range, priceCh
                 newFavorites.favorites[index].coins.push(symbol)//seçili checkbox'ın index'i ile favorilerin indeksi aynı, checked'sa newFavorites'a ekliyor
         })
 
-        await dispatch({type: 'ADD_FAVORITE_COIN', payload: newFavorites.favorites}) //newFavorites global state'e ekleniyor
+        dispatch({type: 'ADD_FAVORITE_COIN', payload: newFavorites.favorites}) //newFavorites global state'e ekleniyor
 
         setModuleBox(false)
     }

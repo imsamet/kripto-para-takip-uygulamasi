@@ -1,5 +1,6 @@
 import Style from './favorite.module.css'
 
+import React from 'react'
 import {useCrypto} from '../../../context/cryptoContext'
 import {useFavorites} from '../../../context/favoritesContext'
 import Crypto from './crypto/crypto'
@@ -8,7 +9,7 @@ import { useState } from 'react'
 import ModuleBox from '../../module-box/moduleBox'
 import Button from '../../button/button'
 
-export default function Favorite ({favoriteIndex, title, favoriteCoins}) {
+const Favorite = React.memo(function Favorite ({favoriteIndex, title}) {
 
     const [isModuleBox, setModuleBox] = useState(false)
     const {cryptos} = useCrypto()
@@ -47,7 +48,7 @@ export default function Favorite ({favoriteIndex, title, favoriteCoins}) {
                     cryptos && 
                         cryptos.filter((value) => {
 
-                            return favoriteCoins.find(coin => coin === value.symbol)
+                            return favorites.favorites[favoriteIndex].coins.find(coin => coin === value.symbol)
 
                         }).map((value, index) => {
 
@@ -85,4 +86,6 @@ export default function Favorite ({favoriteIndex, title, favoriteCoins}) {
 
         </div>
     )
-}
+})
+
+export default Favorite

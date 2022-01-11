@@ -51,7 +51,6 @@ export default function Favorites () {
                             key={`${index}-${value.name}`}
                             favoriteIndex={index}
                             title={value.title}
-                            favoriteCoins={value.coins}
                         />
                     )
                 })

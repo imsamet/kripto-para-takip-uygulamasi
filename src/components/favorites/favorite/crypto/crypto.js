@@ -1,12 +1,13 @@
 import Style from './crypto.module.css'
 
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { SaveActive } from '../../../icons'
 import cn from 'classnames'
 import {useFavorites} from '../../../../context/favoritesContext'
 
-export default function Crypto ({ favoriteIndex, image, symbol, cryptoId, price, range, priceChange, percent }) {
+const Crypto = React.memo(function Crypto ({ favoriteIndex, image, symbol, cryptoId, price, range, priceChange, percent }) {
 
     const {favorites, dispatch} = useFavorites()
 
@@ -57,4 +58,6 @@ export default function Crypto ({ favoriteIndex, image, symbol, cryptoId, price,
 
         </div>
     )
-}
+})
+
+export default Crypto
